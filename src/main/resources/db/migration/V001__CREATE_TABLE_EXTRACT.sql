@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS EXTRACT (
+    id BIGSERIAL NOT NULL,
+    date_extract DATE NOT NULL,
+    value_extract NUMERIC(20, 2) NOT NULL,
+    identifier TEXT NOT NULL,
+    description TEXT NOT NULL,
+    file_name TEXT NOT NULL,
+    CONSTRAINT pk_extract PRIMARY KEY (id),
+    CONSTRAINT U_IDENTIFIER_VALUEEXTRACT UNIQUE (identifier, value_extract)
+);
+
+CREATE SEQUENCE EXTRACT_SEQ START WITH 1 INCREMENT BY 1;
