@@ -1,6 +1,8 @@
 package br.com.wleydson.financialcontrol.resources;
 
+import br.com.wleydson.financialcontrol.services.CreditCardExtractResourceService;
 import br.com.wleydson.financialcontrol.services.ExtractService;
+import br.com.wleydson.financialcontrol.services.impl.CreditCardExtractResourceServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,14 +16,14 @@ import java.io.IOException;
 @Slf4j
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(path = "/extract-card")
-public class ExtratoCardResource {
+@RequestMapping(path = "/credit-card-extract")
+public class CreditCardExtractResource {
 
-    private final ExtractService extractService;
+    private final CreditCardExtractResourceServiceImpl service;
 
     @PostMapping
     public void uploadExtractFile(@RequestParam MultipartFile file) throws IOException {
-        extractService.uploadExtract(file);
+        service.uploadExtract(file);
     }
 
 }
