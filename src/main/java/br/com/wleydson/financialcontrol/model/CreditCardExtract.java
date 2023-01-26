@@ -1,5 +1,6 @@
 package br.com.wleydson.financialcontrol.model;
 
+import br.com.wleydson.financialcontrol.enums.BankEnum;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -25,15 +26,32 @@ public class CreditCardExtract {
     @Column(name = "date_credit")
     private LocalDate date;
 
+    @Column(name = "month_extract")
+    private String month;
+
+    @Column(name = "year_extract")
+    private String year;
+
     @Column(name = "description")
     private String description;
+
+    @Column(name = "file")
+    private String file;
 
     @Column(name = "value_credit")
     private BigDecimal value;
 
-    public CreditCardExtract(LocalDate date, String description, BigDecimal value){
+    @Column(name = "bank")
+    @Enumerated(EnumType.STRING)
+    private BankEnum bank;
+
+    public CreditCardExtract(LocalDate date, String month, String year, String description, BigDecimal value, BankEnum bank, String file){
         this.date = date;
+        this.month = month;
+        this.year = year;
         this.description = description;
         this.value = value;
+        this.bank = bank;
+        this.file = file;
     }
 }

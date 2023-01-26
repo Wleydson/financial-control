@@ -2,6 +2,10 @@ CREATE TABLE IF NOT EXISTS CREDIT_CARD_EXTRACT (
     id BIGSERIAL NOT NULL,
     date_credit DATE NOT NULL,
     description TEXT NOT NULL,
+    file TEXT NOT NULL,
+    month_extract TEXT NOT NULL,
+    year_extract TEXT NOT NULL,
+    bank TEXT NOT NULL,
     value_credit NUMERIC(20, 2) NOT NULL,
     CONSTRAINT PK_CREDIT_CARD_EXTRACT PRIMARY KEY (id)
 );

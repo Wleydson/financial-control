@@ -9,11 +9,10 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @AllArgsConstructor
-public class CreditCardExtractResumeDTO {
+public class CreditCardExtractDTO {
 
     private Integer size;
     private BigDecimal value;
-    private String file;
     private String name;
 
 }
